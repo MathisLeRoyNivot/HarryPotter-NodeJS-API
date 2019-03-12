@@ -8,6 +8,9 @@ const { ObjectID } = require('mongoose');
 
 // Import models
 const { mongoose } = require('./db/db');
+const { Character } = require('./models/characters');
+const { House } = require('./models/houses');
+const { Movie } = require('./models/movies');
 
 const app = express();
 app.use(bodyParser.json());
