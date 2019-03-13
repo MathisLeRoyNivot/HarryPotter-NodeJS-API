@@ -171,4 +171,4 @@ module.exports = {
     deleteCharacter,
     deleteHouse,
     deleteMovie
-}
+};

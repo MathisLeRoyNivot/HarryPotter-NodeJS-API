@@ -8,4 +8,4 @@ mongoose.connect(url, { useNewUrlParser: true });
 
 
 // Exportation
-module.exports = { mongoose }
+module.exports = { mongoose };

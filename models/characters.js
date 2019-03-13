@@ -25,4 +25,4 @@ const Character = mongoose.model('characters', {
     }
 })
 
-module.exports = { Character }
+module.exports = { Character };

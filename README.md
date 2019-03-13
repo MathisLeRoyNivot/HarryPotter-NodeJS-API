@@ -19,7 +19,7 @@ let privateurl = 'url';
 
 module.exports = {
     privateurl
-}
+};
 ```
 You need to replace **url** with your connection url provided by your host. It should look like the following :
 

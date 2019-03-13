@@ -1,30 +1,27 @@
 // Import depedencies
 const http = require("http");
 const { argv } = require("yargs");
-const controller = require("./access/accesss.js");
+const access = require("./access/access.js");
 
 // Port argument, if nothing entered, default port is 3000
 const inputPort = argv.port;
-const port =
-  inputPort && !isNaN(inputPort) && (inputPort > 0 && inputPort % 1 == 0)
-    ? inputPort
-    : 3000;
+const inputFct = argv.fct;
+const inputTable = argv.table;
+let port = (inputPort && !isNaN(inputPort) && (inputPort > 0 && inputPort % 1 === 0 && inputPort < 65536)) ? inputPort : 3000;
 
 // Function and table argument, the user must enter one of the functions (get, post, delete)
 // and one of the tables (characters, houses, movies)
-const inputFct = argv.fct;
-const inputTable = argv.table;
 switch (inputFct) {
   case "get":
     switch (inputTable) {
       case "characters":
-        controller.getCharacters;
+        access.getCharacters;
         break;
       case "houses":
-        controller.getHouses;
+        access.getHouses;
         break;
       case "movies":
-        controller.getMovies;
+        access.getMovies;
         break;
       default:
         console.log("You must enter 'characters', 'houses' or 'movies'.");
@@ -33,13 +30,13 @@ switch (inputFct) {
   case "post":
     switch (inputTable) {
       case "characters":
-        controller.postCharacters;
+        access.postCharacters;
         break;
       case "houses":
-        controller.postHouses;
+        access.postHouses;
         break;
       case "movies":
-        controller.postMovies;
+        access.postMovies;
         break;
       default:
         console.log("You must enter 'characters', 'houses' or 'movies'.");
@@ -48,13 +45,13 @@ switch (inputFct) {
   case "delete":
     switch (inputTable) {
       case "characters":
-        controller.deleteCharacter;
+        access.deleteCharacter;
         break;
       case "houses":
-        controller.deleteHouse;
+        access.deleteHouse;
         break;
       case "movies":
-        controller.deleteMovie;
+        access.deleteMovie;
         break;
       default:
         console.log("You must enter 'characters', 'houses' or 'movies'.");
