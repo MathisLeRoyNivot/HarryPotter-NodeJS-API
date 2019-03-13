@@ -170,5 +170,6 @@ module.exports = {
     postMovies,
     deleteCharacter,
     deleteHouse,
-    deleteMovie
-}
+    deleteMovie,
+    app
+};

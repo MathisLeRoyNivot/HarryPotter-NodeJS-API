@@ -19,10 +19,10 @@ const Character = mongoose.model('characters', {
         trim: true
     },
     movies: {
-        type: [movie],
+        type: [String],
         minlength: 1,
         trim: true
     }
 })
 
-module.exports = { Character }
+module.exports = { Character };
