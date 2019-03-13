@@ -71,7 +71,7 @@ const postHouses = app.post('/houses', (req, res) => {
         ghost: req.body.ghost,
         commom_room : req.body.commom_room
     });
-    newHouse.save().then(character => {
+    newHouse.save().then(house => {
         res.send(house);
         console.log(house);
     }).catch(err => {
