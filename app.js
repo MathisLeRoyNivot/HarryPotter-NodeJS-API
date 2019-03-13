@@ -3,7 +3,6 @@ const express = require('express');
 const http = require('http');
 // const url = require('url');
 const { argv } = require('yargs');
-const { ObjectID } = require('mongoose');
 
 // Import db
 const { mongoose } = require('./db/db');
@@ -16,6 +15,6 @@ http.Server(app);
 
 app.listen(port, () => {
     console.log(`Server is running on port : ${port} \n You can access to the server at the following address : http://localhost:${port}`);
-  });
+});
 
 module.exports = {  }

@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
+const { ObjectID } = require('mongoose');
 
 const { Character } = require('./models/characters');
 const { House } = require('./models/houses');
@@ -46,7 +47,10 @@ const getMovies = app.get('/movies', (req, res) => {
 // Characters
 const postCharacters = app.post('/characters', (req, res) => {
     const newCharacter = new Character({
-        text: req.body.text
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        house: req.body.house,
+        movie: req.body.movies
     });
     newCharacter.save().then(character => {
         res.send(character);
@@ -59,7 +63,13 @@ const postCharacters = app.post('/characters', (req, res) => {
 // Houses
 const postHouses = app.post('/houses', (req, res) => {
     const newHouse = new House({
-        text: req.body.text
+        name: req.body.name,
+        colors: req.body.colors,
+        animal: req.body.animal,
+        trait: req.body.trait,
+        head: req.body.head,
+        ghost: req.body.ghost,
+        commom_room : req.body.commom_room
     });
     newHouse.save().then(character => {
         res.send(house);
@@ -72,7 +82,9 @@ const postHouses = app.post('/houses', (req, res) => {
 // Movies
 const postMovies = app.post('/movies', (req, res) => {
     const newMovie = new Character({
-        text: req.body.text
+        title: req.body.title,
+        director: req.body.director,
+        release_date: req.body.release_date
     });
     newMovie.save().then(movie => {
         res.send(movie);
@@ -129,7 +141,7 @@ const deleteMovie = app.delete('/movies/:id', (req, res) => {
     if (!ObjectID.isValid(id)) {
         res.status(404).send();
     } else {
-        Todo.findByIdAndRemove(id).then(movie => {
+        Movie.findByIdAndRemove(id).then(movie => {
             if (!movie) {
                 res.status(404).send();
             } else {
@@ -147,6 +159,8 @@ const deleteMovie = app.delete('/movies/:id', (req, res) => {
 
 // --------- PUT METHODS ---------
 
+
+// --------- EXPORTING PREVIOUS MODULES ---------
 module.exports = {
     getCharacters,
     getHouses,
