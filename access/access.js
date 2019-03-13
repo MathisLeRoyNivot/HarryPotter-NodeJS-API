@@ -114,7 +114,7 @@ const deleteCharacter = app.delete('/characters/:id', (req, res) => {
         }).catch(err => {
             res.status(500).send(err);
         });
-    }
+    };
 });
 
 // Houses
@@ -132,7 +132,7 @@ const deleteHouse = app.delete('/houses/:id', (req, res) => {
         }).catch(err => {
             res.status(500).send(err);
         });
-    }
+    };
 });
 
 // Movies
@@ -150,7 +150,7 @@ const deleteMovie = app.delete('/movies/:id', (req, res) => {
         }).catch(err => {
             res.status(500).send(err);
         });
-    }
+    };
 });
 
 
