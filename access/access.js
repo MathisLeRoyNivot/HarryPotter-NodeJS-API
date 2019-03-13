@@ -3,9 +3,9 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const { ObjectID } = require('mongoose');
 
-const { Character } = require('./models/characters');
-const { House } = require('./models/houses');
-const { Movie } = require('./models/movies');
+const { Character } = require('../models/characters');
+const { House } = require('../models/houses');
+const { Movie } = require('../models/movies');
 
 const app = express();
 app.use(bodyParser.json());
@@ -50,7 +50,7 @@ const postCharacters = app.post('/characters', (req, res) => {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         house: req.body.house,
-        movie: req.body.movies
+        movies: req.body.movies
     });
     newCharacter.save().then(character => {
         res.send(character);
@@ -170,5 +170,6 @@ module.exports = {
     postMovies,
     deleteCharacter,
     deleteHouse,
-    deleteMovie
+    deleteMovie,
+    app
 };

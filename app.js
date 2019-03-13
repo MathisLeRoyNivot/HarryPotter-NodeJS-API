@@ -63,10 +63,10 @@ switch (inputFct) {
 
 //Launch server on port given by the user
 
-http.Server(app);
+http.Server(access.app);
 
-app.listen(port, () => {
-    console.log(`Server is running on port : ${port} \n You can access to the server at the following address : http://localhost:${port}`);
+access.app.listen(port, () => {
+    console.log(`Server is running on port : ${port} \n You can access to the server at the following address : http://localhost:${port}/${inputTable}`);
 });
 
 module.exports = {};
