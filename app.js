@@ -3,7 +3,6 @@ const express = require('express');
 const http = require('http');
 // const url = require('url');
 const { argv } = require('yargs');
-const bodyParser = require('body-parser');
 const { ObjectID } = require('mongoose');
 
 // Import db
