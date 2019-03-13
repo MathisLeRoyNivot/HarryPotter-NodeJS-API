@@ -3,9 +3,9 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const { ObjectID } = require('mongoose');
 
-const { Character } = require('./models/characters');
-const { House } = require('./models/houses');
-const { Movie } = require('./models/movies');
+const { Character } = require('../models/characters');
+const { House } = require('../models/houses');
+const { Movie } = require('../models/movies');
 
 const app = express();
 app.use(bodyParser.json());
@@ -18,8 +18,8 @@ const getCharacters = app.get('/characters', (req, res) => {
         res.json(characterList);
     }, err => {
         res.status(500).send(err);
-    })
-})
+    });
+});
 
 // Houses
 const getHouses = app.get('/houses', (req, res) => {
@@ -27,8 +27,8 @@ const getHouses = app.get('/houses', (req, res) => {
         res.json(houseList);
     }, err => {
         res.status(500).send(err);
-    })
-})
+    });
+});
 
 // Movies
 const getMovies = app.get('/movies', (req, res) => {
@@ -36,8 +36,8 @@ const getMovies = app.get('/movies', (req, res) => {
         res.json(movieList);
     }, err => {
         res.status(500).send(err);
-    })
-})
+    });
+});
 
 
 
@@ -50,7 +50,7 @@ const postCharacters = app.post('/characters', (req, res) => {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         house: req.body.house,
-        movie: req.body.movies
+        movies: req.body.movies
     });
     newCharacter.save().then(character => {
         res.send(character);
@@ -58,7 +58,7 @@ const postCharacters = app.post('/characters', (req, res) => {
     }).catch(err => {
         res.status(500).send(err);
     });
-})
+});
 
 // Houses
 const postHouses = app.post('/houses', (req, res) => {
@@ -77,11 +77,11 @@ const postHouses = app.post('/houses', (req, res) => {
     }).catch(err => {
         res.status(500).send(err);
     });
-})
+});
 
 // Movies
 const postMovies = app.post('/movies', (req, res) => {
-    const newMovie = new Character({
+    const newMovie = new Movie({
         title: req.body.title,
         director: req.body.director,
         release_date: req.body.release_date
@@ -92,7 +92,7 @@ const postMovies = app.post('/movies', (req, res) => {
     }).catch(err => {
         res.status(500).send(err);
     });
-})
+});
 
 
 
