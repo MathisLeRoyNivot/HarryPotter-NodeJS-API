@@ -81,7 +81,7 @@ const postHouses = app.post('/houses', (req, res) => {
 
 // Movies
 const postMovies = app.post('/movies', (req, res) => {
-    const newMovie = new Character({
+    const newMovie = new Movie({
         title: req.body.title,
         director: req.body.director,
         release_date: req.body.release_date
