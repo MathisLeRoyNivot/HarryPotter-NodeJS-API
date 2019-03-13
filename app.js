@@ -1,22 +1,17 @@
 // Import depedencies
-const express = require("express");
 const http = require("http");
-// const url = require('url');
 const { argv } = require("yargs");
-const bodyParser = require("body-parser");
-const { ObjectID } = require("mongoose");
+const controller = require("./access/accesss.js");
 
-// Import db
-const { mongoose } = require("./db/db");
-// Import controller
-const controller = require("./controller/controller.js");
-
+// Port argument, if nothing entered, default port is 3000
 const inputPort = argv.port;
 const port =
   inputPort && !isNaN(inputPort) && (inputPort > 0 && inputPort % 1 == 0)
     ? inputPort
     : 3000;
 
+// Function and table argument, the user must enter one of the functions (get, post, delete)
+// and one of the tables (characters, houses, movies)
 const inputFct = argv.fct;
 const inputTable = argv.table;
 switch (inputFct) {
@@ -68,6 +63,8 @@ switch (inputFct) {
   default:
     console.log("You must enter 'get', 'post' or 'delete'.");
 }
+
+//Launch server on port given by the user
 
 http.Server(app);
 
