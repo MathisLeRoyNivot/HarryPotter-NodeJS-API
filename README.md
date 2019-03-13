@@ -11,6 +11,22 @@ To initialize the project you have to **clone** or **download** the ZIP folder o
  $ npm install
  ```
 
+## Setup the mongodb connection
+In order to setup a mongodb connection, you need to create a file privateurl.js, inside the folder db.
+In this file, you need to paste the following:
+```Javascript
+let privateurl = 'url';
+
+module.exports = {
+    privateurl
+}
+```
+You need to replace **url** with your connection url provided by your host. It should look like the following :
+
+```Javascript
+mongodb+srv://user:<password>@cluster-gnebq.mongodb.net/collection?retryWrites=true
+```
+
 ## How to start the Node Server locally 
 
 - To start the Node Server locally on your computer you have to type the following command on your terminal :
