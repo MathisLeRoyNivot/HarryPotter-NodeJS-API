@@ -18,8 +18,8 @@ const getCharacters = app.get('/characters', (req, res) => {
         res.json(characterList);
     }, err => {
         res.status(500).send(err);
-    })
-})
+    });
+});
 
 // Houses
 const getHouses = app.get('/houses', (req, res) => {
@@ -27,8 +27,8 @@ const getHouses = app.get('/houses', (req, res) => {
         res.json(houseList);
     }, err => {
         res.status(500).send(err);
-    })
-})
+    });
+});
 
 // Movies
 const getMovies = app.get('/movies', (req, res) => {
@@ -36,8 +36,8 @@ const getMovies = app.get('/movies', (req, res) => {
         res.json(movieList);
     }, err => {
         res.status(500).send(err);
-    })
-})
+    });
+});
 
 
 
@@ -58,7 +58,7 @@ const postCharacters = app.post('/characters', (req, res) => {
     }).catch(err => {
         res.status(500).send(err);
     });
-})
+});
 
 // Houses
 const postHouses = app.post('/houses', (req, res) => {
@@ -77,7 +77,7 @@ const postHouses = app.post('/houses', (req, res) => {
     }).catch(err => {
         res.status(500).send(err);
     });
-})
+});
 
 // Movies
 const postMovies = app.post('/movies', (req, res) => {
@@ -92,7 +92,7 @@ const postMovies = app.post('/movies', (req, res) => {
     }).catch(err => {
         res.status(500).send(err);
     });
-})
+});
 
 
 
@@ -114,7 +114,7 @@ const deleteCharacter = app.delete('/characters/:id', (req, res) => {
         }).catch(err => {
             res.status(500).send(err);
         });
-    }
+    };
 });
 
 // Houses
@@ -132,7 +132,7 @@ const deleteHouse = app.delete('/houses/:id', (req, res) => {
         }).catch(err => {
             res.status(500).send(err);
         });
-    }
+    };
 });
 
 // Movies
@@ -150,7 +150,7 @@ const deleteMovie = app.delete('/movies/:id', (req, res) => {
         }).catch(err => {
             res.status(500).send(err);
         });
-    }
+    };
 });
 
 
