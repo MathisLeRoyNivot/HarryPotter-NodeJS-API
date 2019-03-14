@@ -10,9 +10,12 @@ const { Movie } = require('../models/movies');
 
 const app = express();
 app.use(bodyParser.json());
+
 const styles = path.join(__dirname, '../' + 'styles');
 app.use(express.static(styles));
-app.use(express.static('../app.js'));
+
+const appFile = path.join(__dirname, '../' + 'app.js');
+app.use(express.static(appFile));
 
 
 // --------- GET METHODS ---------
