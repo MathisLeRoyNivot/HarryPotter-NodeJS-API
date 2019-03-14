@@ -19,6 +19,7 @@ const ObjectId = mongoose.Types.ObjectId;
 
 // --------- GET METHODS ---------
 
+// Generating the home page
 const getHomePage = app.get('/', (req, res) => {
   const homePage = path.join(__dirname, '../' + 'index.html');
   res.sendFile(homePage);
@@ -121,8 +122,8 @@ const deleteCharacter = app.delete('/api/characters/:id', (req, res) => {
       if (!character) {
         res.status(404).send();
       } else {
-        res.send('This item as been deleted');
-      }
+        res.send('This item has been deleted');
+      };
     }).catch(err => {
       res.status(500).send(err);
     });
@@ -139,8 +140,8 @@ const deleteHouse = app.delete('/api/houses/:id', (req, res) => {
       if (!house) {
         res.status(404).send();
       } else {
-        res.send('This item as been deleted');
-      }
+        res.send('This item has been deleted');
+      };
     }).catch(err => {
       res.status(500).send(err);
     });
@@ -157,8 +158,8 @@ const deleteMovie = app.delete('/api/movies/:id', (req, res) => {
       if (!movies) {
         res.status(404).send();
       } else {
-        res.send('This item as been deleted');
-      }
+        res.send('This item has been deleted');
+      };
     }).catch(err => {
       res.status(500).send(err);
     });
@@ -167,7 +168,7 @@ const deleteMovie = app.delete('/api/movies/:id', (req, res) => {
 
 
 // --------- PUT METHODS ---------
-//Characters
+// Characters
 const putCharacter = app.put('/api/characters/:id', function (req, res) {
   const id = req.params.id;
   const editedData = {
@@ -184,14 +185,14 @@ const putCharacter = app.put('/api/characters/:id', function (req, res) {
         res.status(404).send();
       } else {
         res.send(character);
-      }
+      };
     }).catch(err => {
       res.status(500).send(err);
     });
   };
 });
 
-//Houses
+// Houses
 const putHouse = app.put('/api/houses/:id', function (req, res) {
   const id = req.params.id;
   const editedData = {
@@ -211,14 +212,14 @@ const putHouse = app.put('/api/houses/:id', function (req, res) {
         res.status(404).send();
       } else {
         res.send(house);
-      }
+      };
     }).catch(err => {
       res.status(500).send(err);
     });
   };
 });
 
-//Movies
+// Movies
 const putMovie = app.put('/api/movies/:id', function (req, res) {
   const id = req.params.id;
   const editedData = {
@@ -234,7 +235,7 @@ const putMovie = app.put('/api/movies/:id', function (req, res) {
         res.status(404).send();
       } else {
         res.send(movie);
-      }
+      };
     }).catch(err => {
       res.status(500).send(err);
     });
