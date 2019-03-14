@@ -13,7 +13,7 @@ To initialize the project you have to **clone** or **download** the ZIP folder o
 
 ## Setup the mongodb connection
 In order to setup a mongodb connection, you need to create a file privateurl.js, inside the folder db.
-In this file, you need to paste the following:
+In this file, you need to paste the following :
 ```Javascript
 let privateurl = 'url';
 
@@ -44,11 +44,11 @@ mongodb+srv://user:<password>@cluster-gnebq.mongodb.net/collection?retryWrites=t
 ```
  - You can also give an argument when you are launching the server, to specify the port of your choice in case the default port (3000) was already taken :
  ```bash
- $ node <your_file_name.js> <port>
+ $ node <your_file_name.js> --port=<port>
 ```
  For example, we want to launch the server on port 4000 :
 ```bash
- $ node app.js 4000
+ $ node app.js --port=4000
  Server is running on port : 4000
  You can access to the server at the following address : http://localhost:4000
  ```

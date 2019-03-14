@@ -1,5 +1,6 @@
 const express = require('express');
 const http = require('http');
+const path = require('path');
 const bodyParser = require('body-parser');
 const { ObjectID } = require('mongoose');
 
@@ -9,9 +10,17 @@ const { Movie } = require('../models/movies');
 
 const app = express();
 app.use(bodyParser.json());
+const styles = path.join(__dirname, '../' + 'styles');
+app.use(express.static(styles));
+app.use(express.static('../app.js'));
 
 
 // --------- GET METHODS ---------
+const getHomePage = app.get('/', (req, res) => {
+    const homePage = path.join(__dirname, '../' + 'index.html');
+    res.sendFile(homePage);
+})
+
 // Characters
 const getCharacters = app.get('/characters', (req, res) => {
     Character.find().then(characterList => {
@@ -162,6 +171,7 @@ const deleteMovie = app.delete('/movies/:id', (req, res) => {
 
 // --------- EXPORTING PREVIOUS MODULES ---------
 module.exports = {
+    getHomePage,
     getCharacters,
     getHouses,
     getMovies,

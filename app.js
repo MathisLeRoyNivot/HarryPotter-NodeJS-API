@@ -6,12 +6,7 @@ const access = require("./access/access.js");
 // Port argument, if nothing entered, default port is 3000
 const inputPort = argv.port;
 const inputGet = argv.get;
-let port =
-  inputPort &&
-  !isNaN(inputPort) &&
-  (inputPort > 0 && inputPort % 1 === 0 && inputPort < 65536)
-    ? inputPort
-    : 3000;
+let port = inputPort && !isNaN(inputPort) && (inputPort > 0 && inputPort % 1 === 0 && inputPort < 65536) ? inputPort : 3000;
 
 // Function and table argument, the user must enter one of the functions (get, post, delete)
 // and one of the tables (characters, houses, movies)
@@ -27,17 +22,29 @@ switch (inputGet) {
     break;
 }
 
-//Launch server on port given by the user
 
+//Launch server on port given by the user
 http.Server(access.app);
 access.app.listen(port, () => {
   if (inputGet) {
-    console.log(
-      `Server is running on port : ${port} \n You can access to the server at the following address : http://localhost:${port}/${inputGet}`
-    );
+    console.log(`Server is running on port : ${port}\nYou can access to the server at the following address :`,`\x1b[32m`,`http://localhost:${port}/${inputGet}`);
   } else {
-    console.log(`Server is running on port : ${port} \n You can access to the server at the following address : http://localhost:${port}`);
+    access.getHomePage;
+    console.log(`Server is running on port : ${port}\nYou can access to the server at the following address :`,`\x1b[32m`,`http://localhost:${port}/`);
   }
 });
 
-module.exports = {};
+let linkGet = (attributes) => {
+  if (attributes === "characters") {
+    var linkCharac = `http://localhost:${port}/characters`;
+    document.getElementById('linkGetCharacters').href=linkCharac;
+  } else if (attributes === "houses") {
+    var linkHou = `http://localhost:${port}/houses`;
+    document.getElementById('linkGetHouses').href=linkHou;
+  } else if(attributes === "movies") {
+    var linkMov = `http://localhost:${port}/movies`;
+    document.getElementById('linkGetMovies').href=linkMov;
+  }
+};
+
+module.exports = { linkGet };

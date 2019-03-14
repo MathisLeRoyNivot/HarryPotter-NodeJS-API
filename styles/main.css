@@ -1,0 +1,58 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+h1, h4 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+hr {
+  margin-top: 40px;
+  width: 30%;
+}
+
+span img {
+  vertical-align: middle;
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+span i {
+  font-size: 1.6em;
+}
+
+.link-github {
+  font-weight: bolder;
+}
+
+.get-section {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px auto;
+  text-align: center;
+  width: 80%;
+}
+
+.title-method {
+  font-size: 1.5em;
+}
+
+.btn {
+  border: 2px solid black;
+  border-radius: 5px;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+}
+/*# sourceMappingURL=main.css.map */
