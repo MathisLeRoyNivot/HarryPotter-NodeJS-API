@@ -25,12 +25,26 @@ switch (inputGet) {
 
 //Launch server on port given by the user
 http.Server(routing.app);
-routing.app.listen(port, () => {
-  if (inputGet) {
-    console.log(`Server is running on port : ${port}\nYou can routing to the server at the following address :`,`\x1b[32m`,`http://localhost:${port}/${inputGet}`);
+const launchRouting = (inputGet, callback) => {
+  routing.app.listen(port, () => {
+    if (inputGet) {
+      callback(`Server is running on port : ${port}\nYou can routing to the server at the following address :\x1b[32m http://localhost:${port}/${inputGet}`);
+    } else {
+      routing.getHomePage;
+      callback(`Server is running on port : ${port}\nYou can routing to the server at the following address : \x1b[32m http://localhost:${port}/`);
+    }
+  });
+
+};
+
+
+
+launchRouting(inputGet, (err, logPort) => {
+  if (err) {
+    console.log(err);
+    return;
   } else {
-    routing.getHomePage;
-    console.log(`Server is running on port : ${port}\nYou can routing to the server at the following address :`,`\x1b[32m`,`http://localhost:${port}/`);
+    console.log(logPort);
   }
 });
 

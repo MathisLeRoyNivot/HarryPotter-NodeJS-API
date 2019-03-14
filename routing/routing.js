@@ -14,15 +14,12 @@ app.use(bodyParser.json());
 const styles = path.join(__dirname, '../' + 'styles');
 app.use(express.static(styles));
 
-const appFile = path.join(__dirname, '../' + 'app.js');
-app.use(express.static(appFile));
-
-
 // --------- GET METHODS ---------
+
 const getHomePage = app.get('/', (req, res) => {
     const homePage = path.join(__dirname, '../' + 'index.html');
     res.sendFile(homePage);
-})
+});
 
 // Characters
 const getCharacters = app.get('/characters', (req, res) => {
@@ -164,9 +161,6 @@ const deleteMovie = app.delete('/movies/:id', (req, res) => {
         });
     };
 });
-
-
-
 
 
 // --------- PUT METHODS ---------
