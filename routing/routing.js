@@ -11,12 +11,9 @@ const { Movie } = require('../models/movies');
 const app = express();
 app.use(bodyParser.json());
 
+// --- STYLES DIRECTORY IMPORTATION ---
 const styles = path.join(__dirname, '../' + 'styles');
 app.use(express.static(styles));
-
-const appFile = path.join(__dirname, '../' + 'app.js');
-app.use(express.static(appFile));
-
 
 // --------- GET METHODS ---------
 const getHomePage = app.get('/', (req, res) => {

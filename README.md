@@ -42,13 +42,18 @@ mongodb+srv://user:<password>@cluster-gnebq.mongodb.net/collection?retryWrites=t
  Server is running on port : 3000
  You can access to the server at the following address : http://localhost:3000
 ```
- - You can also give an argument when you are launching the server, to specify the port of your choice in case the default port (3000) was already taken :
- ```bash
- $ node <your_file_name.js> --port=<port>
-```
- For example, we want to launch the server on port 4000 :
-```bash
- $ node app.js --port=4000
- Server is running on port : 4000
- You can access to the server at the following address : http://localhost:4000
- ```
+### 1. Give one argument : < port >
+> - You can also give an argument when you are launching the server, to specify the port of your choice in case the default port (3000) was already taken :
+> ```bash
+> $ node <your_file_name.js> --port=<port>
+> ```
+>  For example, we want to launch the server on port 4000 :
+> ```bash
+>  $ node app.js --port=4000
+>  Server is running on port : 4000
+>  You can access to the server at the following address : http://localhost:4000
+> ```
+### 2. Give a second argument : < function >
+
+
+### 3. Give a third argument : < table >
