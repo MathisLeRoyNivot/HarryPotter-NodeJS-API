@@ -5,6 +5,12 @@ body {
     width: 100%;
 }
 
+a.link-github,
+a.link-info {
+    color: black;
+    font-weight: bolder;
+}
+
 h1, h4 {
     text-align: center;
 }
@@ -29,8 +35,15 @@ span i {
     font-size: 1.6em;
 }
 
+.main-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .link-github {
-    font-weight: bolder;
+    color: blue;
 }
 
 .section {
@@ -65,17 +78,11 @@ a.btn {
     box-shadow: 0px 0px 10px rgba(0, 0, 00, 0.5);
 }
 
-.btn-post:hover {
-    background:rgba(68, 189, 50, .75);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+.methods-info {
+    text-align: center;
 }
 
-.btn-put:hover {
-   background: rgba(240, 147, 43, .75);
-   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.btn-delete:hover {
-    background:rgba(224, 47, 28, .75);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+.info-text {
+    font-size: 1.25em;
+    font-style: italic;
 }
