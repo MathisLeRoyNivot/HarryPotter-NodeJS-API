@@ -34,7 +34,24 @@ const getCharacters = app.get('/api/characters', (req, res) => {
   });
 });
 
-// Houses
+const getACharacter = app.get('/api/characters/:id', (req, res) => {
+  const id = req.params.id;
+  if (!ObjectId.isValid(id)) {
+    res.status(404).send('not found');
+  } else {
+    Character.findById(id).then(character => {
+      if (!character) {
+        res.status(404).send();
+      } else {
+        res.send(character);
+      };
+    }).catch(err => {
+      res.status(500).send(err);
+    });
+  };
+});
+
+// Houses full
 const getHouses = app.get('/api/houses', (req, res) => {
   House.find().then(houseList => {
     res.json(houseList);
@@ -43,13 +60,49 @@ const getHouses = app.get('/api/houses', (req, res) => {
   });
 });
 
-// Movies
+// Houses one
+const getAHouse = app.get('/api/houses/:id', (req, res) => {
+  const id = req.params.id;
+  if (!ObjectId.isValid(id)) {
+    res.status(404).send('not found');
+  } else {
+    House.findById(id).then(house => {
+      if (!house) {
+        res.status(404).send();
+      } else {
+        res.send(house);
+      };
+    }).catch(err => {
+      res.status(500).send(err);
+    });
+  };
+});
+
+// Movies full
 const getMovies = app.get('/api/movies', (req, res) => {
   Movie.find().then(movieList => {
     res.json(movieList);
   }, err => {
     res.status(500).send(err);
   });
+});
+
+// Movies one
+const getAMovie = app.get('/api/movies/:id', (req, res) => {
+  const id = req.params.id;
+  if (!ObjectId.isValid(id)) {
+    res.status(404).send('not found');
+  } else {
+    Movie.findById(id).then(movie => {
+      if (!movie) {
+        res.status(404).send();
+      } else {
+        res.send(movie);
+      };
+    }).catch(err => {
+      res.status(500).send(err);
+    });
+  };
 });
 
 
@@ -248,6 +301,9 @@ module.exports = {
   getCharacters,
   getHouses,
   getMovies,
+  getACharacter,
+  getAHouse,
+  getAMovie,
   postCharacters,
   postHouses,
   postMovies,
