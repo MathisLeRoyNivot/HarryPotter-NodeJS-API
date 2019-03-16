@@ -22,8 +22,6 @@ const launchRouting = (inputDoc, callback) => {
 
 };
 
-
-
 launchRouting(inputDoc, (err, logPort) => {
   if (err) {
     console.log(err);
