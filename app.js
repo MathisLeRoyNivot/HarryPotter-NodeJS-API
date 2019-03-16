@@ -5,33 +5,18 @@ const routing = require("./routing/routing.js");
 
 // Port argument, if nothing entered, default port is 3000
 const inputPort = argv.port;
-const inputGet = argv.get;
+const inputDoc = argv.doc;
 let port = inputPort && !isNaN(inputPort) && (inputPort > 0 && inputPort % 1 === 0 && inputPort < 65536) ? inputPort : 3000;
-
-// Function and table argument, the user must enter one of the functions (get, post, delete)
-// and one of the tables (characters, houses, movies)
-switch (inputGet) {
-  case "characters":
-    routing.getCharacters;
-    break;
-  case "houses":
-    routing.getHouses;
-    break;
-  case "movies":
-    routing.getMovies;
-    break;
-}
-
 
 //Launch server on port given by the user
 http.Server(routing.app);
-const launchRouting = (inputGet, callback) => {
+const launchRouting = (inputDoc, callback) => {
   routing.app.listen(port, () => {
-    if (inputGet) {
-      callback(`Server is running on port : ${port}\nYou can routing to the server at the following address :\x1b[32m http://localhost:${port}/${inputGet}`);
+    routing.getHomePage;
+    if (inputDoc) {
+      callback(`\x1b[36m Server is running on port : \x1b[31m ${port} \x1b[36m \nYou can routing to the server at the following address :\x1b[31m http://localhost:${port}/\n \x1b[36m This API contains 3 collections, Characters, Houses and Movies. \n You can perform get, post, put and delete methods on each of those collections. \n If you want more informations, please visit : \x1b[31m https://github.com/MathisLeRoyNivot/NodeJS_Project`);
     } else {
-      routing.getHomePage;
-      callback(`Server is running on port : ${port}\nYou can routing to the server at the following address : \x1b[32m http://localhost:${port}/`);
+      callback(`\x1b[36m Server is running on port : \x1b[31m ${port} \x1b[36m \nYou can routing to the server at the following address :\x1b[31m http://localhost:${port}/`);
     }
   });
 
