@@ -25,7 +25,7 @@ const getHomePage = app.get('/', (req, res) => {
   res.sendFile(homePage);
 });
 
-// Characters
+// Characters full
 const getCharacters = app.get('/api/characters', (req, res) => {
   Character.find().then(characterList => {
     res.json(characterList);
@@ -34,6 +34,7 @@ const getCharacters = app.get('/api/characters', (req, res) => {
   });
 });
 
+// Characters one
 const getACharacter = app.get('/api/characters/:id', (req, res) => {
   const id = req.params.id;
   if (!ObjectId.isValid(id)) {
