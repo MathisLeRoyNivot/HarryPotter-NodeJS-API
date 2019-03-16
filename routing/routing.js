@@ -18,7 +18,6 @@ app.use(express.static(styles));
 const ObjectId = mongoose.Types.ObjectId;
 
 // --------- GET METHODS ---------
-
 // Generating the home page
 const getHomePage = app.get('/', (req, res) => {
   const homePage = path.join(__dirname, '../' + 'index.html');

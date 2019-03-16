@@ -37,8 +37,6 @@ const launchRouting = (inputGet, callback) => {
 
 };
 
-
-
 launchRouting(inputGet, (err, logPort) => {
   if (err) {
     console.log(err);
