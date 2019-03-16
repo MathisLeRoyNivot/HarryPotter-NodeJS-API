@@ -2,7 +2,7 @@
 
 Hello ! Here's our Node.JS API developped by Mattéo Lecuit (@MatteoLecuit), Henry Maisonneuve (@Kwoak) & Mathis Le Roy-Nivot (@MathisLeRoyNivot).
 
-## Initialization
+## 1 - Initialization
 
 To initialize the project you have to **clone** or **download** the ZIP folder of the project. Make sure you have already download Node.JS. If this is not the case, download [Node.JS](https://nodejs.org/en/) and follow the instructions.
 
@@ -28,7 +28,7 @@ To initialize the project you have to **clone** or **download** the ZIP folder o
  $ npm install
  ```
 
-## Setup the mongodb connection <img src="http://35.157.45.127/wp-content/uploads/2018/03/mongo-db-design.png" height="50" vertical-align="middle" title="Mongo Logo">
+## 2 - Setup the mongodb connection <img src="http://35.157.45.127/wp-content/uploads/2018/03/mongo-db-design.png" height="50" vertical-align="middle" title="Mongo Logo">
 In order to setup a mongodb connection, you need to create a file privateurl.js, inside the folder db.
 In this file, you need to paste the following :
 ```Javascript
