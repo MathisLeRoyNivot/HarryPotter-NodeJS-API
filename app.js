@@ -14,15 +14,15 @@ const launchRouting = (inputDoc, callback) => {
   routing.app.listen(port, () => {
     routing.getHomePage;
     if (inputDoc) {
-      callback(`\x1b[36m Server is running on port : \x1b[31m ${port} \x1b[36m \nYou can routing to the server at the following address :\x1b[31m http://localhost:${port}/\n \x1b[36m This API contains 3 collections, Characters, Houses and Movies. \n You can perform get, post, put and delete methods on each of those collections. \n If you want more informations, please visit : \x1b[31m https://github.com/MathisLeRoyNivot/NodeJS_Project`);
+      callback(`\x1b[36mServer is running on port : \x1b[31m ${port} \x1b[36m \nYou can routing to the server at the following address :\x1b[31m http://localhost:${port}/\n \x1b[36m This API contains 3 collections, Characters, Houses and Movies. \n You can perform get, post, put and delete methods on each of those collections. \n If you want more informations, please visit : \x1b[31m https://github.com/MathisLeRoyNivot/NodeJS_Project`);
     } else {
-      callback(`\x1b[36m Server is running on port : \x1b[31m ${port} \x1b[36m \nYou can routing to the server at the following address :\x1b[31m http://localhost:${port}/`);
+      callback(`\x1b[36mServer is running on port : \x1b[31m ${port} \x1b[36m \nYou can routing to the server at the following address :\x1b[31m http://localhost:${port}/`);
     }
   });
 
 };
 
-launchRouting(inputGet, (err, logPort) => {
+launchRouting(inputPort, (err, logPort) => {
   if (err) {
     console.log(err);
     return;

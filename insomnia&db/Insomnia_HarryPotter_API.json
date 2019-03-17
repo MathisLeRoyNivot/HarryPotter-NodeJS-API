@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2019-03-16T16:20:56.508Z",
+	"__export_date": "2019-03-17T21:31:31.468Z",
 	"__export_source": "insomnia.desktop.app:v6.3.2",
 	"resources": [
 		{
@@ -49,6 +49,8 @@
 					"id_13": "5c877ee21c9d4400003feac7",
 					"id_14": "5c877f331c9d4400003feac8",
 					"id_15": "5c877f7e1c9d4400003feac9",
+					"id_16_test": "5c8eb6ea30678b4d846614ae",
+					"id_17_delete": "5c8eb9a81c9d440000e05083",
 					"id_2": "5c8775341c9d4400003feabf",
 					"id_3": "5c877a471c9d4400003feac0",
 					"id_4": "5c877bce1c9d4400003feac1",
@@ -64,6 +66,8 @@
 					"id_1": "5c876b221c9d4400003feab7",
 					"id_2": "5c876b5e1c9d4400003feab8",
 					"id_3": "5c876b751c9d4400003feab9",
+					"id_4_test": "5c8eb6ec30678b4d846614af",
+					"id_5_delete": "5c8ebbbe1c9d440000602595",
 					"title": "houses"
 				},
 				"movies": {
@@ -75,12 +79,14 @@
 					"id_5": "5c876fc11c9d4400009bd0b1",
 					"id_6": "5c8770041c9d4400009bd0b2",
 					"id_7": "5c8770421c9d4400009bd0b3",
+					"id_8_test": "5c8eb6ee30678b4d846614b0",
+					"id_9_delete": "5c8ebae31c9d4400000956e3",
 					"title": "movies"
 				},
 				"server_port": 3000
 			},
 			"metaSortKey": -1552359601456.75,
-			"modified": 1552753206160,
+			"modified": 1552858152830,
 			"name": "Harry Potter API",
 			"parentId": "wrk_dc59b714331f492b8b0443f23be3c99f",
 			"_type": "request_group"
@@ -272,7 +278,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": ""
+				"text": "{\n\t\"firstname\": \"test firstname\",\n\t\"lastname\": \"test lastname\",\n\t\"house\": \"houses/{{ houses.id_3  }}\",\n\t\"movies\": [\n\t\t\"movies/5c876f061c9d4400009bd0ae\",\n\t\t\"movies/5c876f3c1c9d4400009bd0af\"\n\t]\n}"
 			},
 			"created": 1552753206073,
 			"description": "",
@@ -286,7 +292,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1552495190139,
 			"method": "POST",
-			"modified": 1552753206073,
+			"modified": 1552856428760,
 			"name": "Characters",
 			"parameters": [],
 			"parentId": "fld_1519d4195c644a95ae99bb923bf3c974",
@@ -304,7 +310,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": ""
+				"text": "{\n\t\"title\": \"New Harry Potter\",\n\t\"director\": \"David Yates\",\n\t\"release_date\": 2019\n}"
 			},
 			"created": 1552753206080,
 			"description": "",
@@ -318,7 +324,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1552495190039,
 			"method": "POST",
-			"modified": 1552753206080,
+			"modified": 1552857251860,
 			"name": "Movies",
 			"parameters": [],
 			"parentId": "fld_1519d4195c644a95ae99bb923bf3c974",
@@ -336,7 +342,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": ""
+				"text": "{\n\t\"name\":\"House test 1\",\n\t\"colors\":\"color test 1\",\n\t\"animal\":\"animal test 1\",\n\t\"trait\":\"trait test 1\",\n\t\"head\":\"head test 1\",\n\t\"ghost\":\"ghost test 1\",\n\t\"commom_room\":\"common room test 1\"\n}"
 			},
 			"created": 1552753206089,
 			"description": "",
@@ -350,7 +356,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1552495190089,
 			"method": "POST",
-			"modified": 1552753206089,
+			"modified": 1552857215995,
 			"name": "Houses",
 			"parameters": [],
 			"parentId": "fld_1519d4195c644a95ae99bb923bf3c974",
@@ -368,7 +374,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": ""
+				"text": "{\n\t\"firstname\": \"new test firstname\",\n\t\"lastname\": \"new test lastname\",\n\t\"house\": \"houses/{{ houses.id_2  }}\",\n\t\"movies\": [\n\t\t\"movies/5c876f061c9d4400009bd0ae\",\n\t\t\"movies/5c876f3c1c9d4400009bd0af\"\n\t]\n}"
 			},
 			"created": 1552753206104,
 			"description": "",
@@ -382,7 +388,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1552495190114,
 			"method": "PUT",
-			"modified": 1552753206104,
+			"modified": 1552857198891,
 			"name": "Characters",
 			"parameters": [],
 			"parentId": "fld_ab455a4398ed4b5d8b1b9bde44ba350f",
@@ -392,7 +398,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ characters.title  }}/{{ characters.id_0  }}",
+			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ characters.title  }}/{{ characters.id_16_test  }}",
 			"_type": "request"
 		},
 		{
@@ -400,7 +406,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": ""
+				"text": "{\n\t\"title\": \"New Harry Potter 2\",\n\t\"director\": \"David Yates\",\n\t\"release_date\": 2021\n}"
 			},
 			"created": 1552753206111,
 			"description": "",
@@ -414,7 +420,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1552495190014,
 			"method": "PUT",
-			"modified": 1552753206111,
+			"modified": 1552857266045,
 			"name": "Movies",
 			"parameters": [],
 			"parentId": "fld_ab455a4398ed4b5d8b1b9bde44ba350f",
@@ -424,7 +430,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ movies.title  }}/{{ movies.id_0  }}",
+			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ movies.title  }}/{{ movies.id_8_test  }}",
 			"_type": "request"
 		},
 		{
@@ -432,7 +438,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": ""
+				"text": "{\n\t\"name\":\"new House test 1\",\n\t\"colors\":\"new color test 1\",\n\t\"animal\":\"new animal test 1\",\n\t\"trait\":\"new trait test 1\",\n\t\"head\":\"new head test 1\",\n\t\"ghost\":\"new ghost test 1\",\n\t\"commom_room\":\"new common room test 1\"\n}"
 			},
 			"created": 1552753206120,
 			"description": "",
@@ -446,7 +452,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1552495190064,
 			"method": "PUT",
-			"modified": 1552753206120,
+			"modified": 1552857239902,
 			"name": "Houses",
 			"parameters": [],
 			"parentId": "fld_ab455a4398ed4b5d8b1b9bde44ba350f",
@@ -456,7 +462,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ houses.title  }}/{{ houses.id_0  }}",
+			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ houses.title  }}/{{ houses.id_4_test  }}",
 			"_type": "request"
 		},
 		{
@@ -469,7 +475,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1552495189989,
 			"method": "DELETE",
-			"modified": 1552753206134,
+			"modified": 1552857392623,
 			"name": "Houses",
 			"parameters": [],
 			"parentId": "fld_bd5418eb989746e3a7f502a3c1ea9d7d",
@@ -479,7 +485,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ houses.title  }}/{{ houses.id_0  }}",
+			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ houses.title  }}/{{ houses.id_5_delete  }}",
 			"_type": "request"
 		},
 		{
@@ -492,7 +498,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1552495189939,
 			"method": "DELETE",
-			"modified": 1552753206142,
+			"modified": 1552857431078,
 			"name": "Movies",
 			"parameters": [],
 			"parentId": "fld_bd5418eb989746e3a7f502a3c1ea9d7d",
@@ -502,7 +508,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ movies.title  }}/{{ movies.id_0  }}",
+			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ movies.title  }}/{{ movies.id_9_delete  }}",
 			"_type": "request"
 		},
 		{
@@ -529,7 +535,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1552495190039,
 			"method": "DELETE",
-			"modified": 1552753206149,
+			"modified": 1552857410717,
 			"name": "Characters",
 			"parameters": [],
 			"parentId": "fld_bd5418eb989746e3a7f502a3c1ea9d7d",
@@ -539,7 +545,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ characters.title  }}/{{ characters.id_0  }}",
+			"url": "{{ base_url  }}:{{ server_port  }}/api/{{ characters.title  }}/{{ characters.id_17_delete  }}",
 			"_type": "request"
 		}
 	]
