@@ -1,6 +1,6 @@
 # Node.JS Project
 
-Hello ! Here's our Node.JS API developped by Mattéo Lecuit (@MatteoLecuit), Henry Maisonneuve (@Kwoak) & Mathis Le Roy-Nivot (@MathisLeRoyNivot).
+Hello ! Here's our Node.JS API developped by [Mattéo Lecuit](https://github.com/MatteoLecuit), [Henry Maisonneuve](https://github.com/Kwoak) & [Mathis Le Roy-Nivot](https://github.com/MathisLeRoyNivot).
 
 ## 1 - Initialization
 
